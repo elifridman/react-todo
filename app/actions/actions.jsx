@@ -15,6 +15,12 @@ export var addTodo = (text)=>{
     text:text
   }
 };
+export var addTodos = (todos) =>{
+  return{
+    type:'ADD_TODOS',
+    todos:todos
+  }
+};
 
 export var toggleTodo = (id)=>{
   return {
