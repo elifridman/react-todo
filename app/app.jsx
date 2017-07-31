@@ -9,13 +9,10 @@ var actions = require('actions');
 var store = require('./store/configureStore.jsx').configure();
 var todoApi = require('todoApi');
 
-store.subscribe(()=>{
-  var state = store.getState();
-  console.log('new state',state);
-  todoApi.setTodos(state.todos);
-});
-var initialTodos = todoApi.getTodos();
-store.dispatch(actions.addTodos(initialTodos));
+// import './../playground/firebase/index';
+
+
+store.dispatch(actions.startAddTodos());
 //Load css
 require('style!css!sass!applicationStyles');
 $(document).foundation();

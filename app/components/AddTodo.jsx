@@ -5,20 +5,20 @@ var actions = require('actions');
 var AddTodo = React.createClass({
   onFormSubmit:function(e){
     e.preventDefault();
-    var todo = this.refs.todo.value;
+    var todoText = this.refs.todoText.value;
     var {dispatch} = this.props;
-    if(todo.length>0){
-      this.refs.todo.value = '';
-      dispatch(actions.addTodo(todo));
+    if(todoText.length>0){
+      this.refs.todoText.value = '';
+      dispatch(actions.startAddTodo(todoText));
     }else{
-      this.refs.todo.focus();
+      this.refs.todoText.focus();
     }
   },
   render:function(){
     return(
       <div className="container_footer">
         <form onSubmit={this.onFormSubmit}>
-          <input type="text" ref="todo"/>
+          <input type="text" ref="todoText"/>
           <button className="button expanded hollow">Add Todo</button>
         </form>
       </div>
