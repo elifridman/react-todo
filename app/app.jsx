@@ -7,7 +7,7 @@ var TodoApp = require('TodoApp');
 
 var actions = require('actions');
 var store = require('./store/configureStore.jsx').configure();
-var todoApi = require('todoApi');
+var todoApi = require('TodoApi');
 
 // import './../playground/firebase/index';
 
