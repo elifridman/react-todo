@@ -1,18 +1,19 @@
 import firebase from 'firebase';
 
-try{
-  // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyA_RQxnZGo42uhJDSH19GR_00tTowpvGKA",
-      authDomain: "mead-todoapp.firebaseapp.com",
-      databaseURL: "https://mead-todoapp.firebaseio.com",
-      projectId: "mead-todoapp",
-      storageBucket: "mead-todoapp.appspot.com",
-      messagingSenderId: "889144540965"
-    };
-    firebase.initializeApp(config);
-}catch(e){
+try {
+  var config = {
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    projectId:process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId:process.env.MESSAGE_SENDER_ID
+  };
+  console.log(config);
+  firebase.initializeApp(config);
+} catch (e) {
 
 }
-  export var firebaseRef = firebase.database().ref();
-  export default firebase;
+
+export var firebaseRef = firebase.database().ref();
+export default firebase;
